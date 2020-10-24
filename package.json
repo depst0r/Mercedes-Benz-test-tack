@@ -1,0 +1,12 @@
+{
+  "name": "mersedes-benz",
+  "version": "1.0.0",
+  "description": "js,scss,html",
+  "main": "index.js",
+  "repository": "https://github.com/depst0r/Mercedes-Benz-test-tack.git",
+  "author": "depstor <depstor90@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "json-server": "^0.16.2"
+  }
+}

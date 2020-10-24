@@ -83,12 +83,6 @@
   padding-left: 5%;
 }
 
-.slider__images {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .slider__navigation {
   padding: 30px 0 30px 0;
   display: -webkit-box;

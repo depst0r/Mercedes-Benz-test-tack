@@ -1,5 +1,0 @@
-// slider
-document.addEventListener('DOMContentLoaded', () => {
-
-})
-

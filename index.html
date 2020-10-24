@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./scss/style.css">
+    <link rel="stylesheet" href="./src/scss/style.css">
     <title>Mercedes-Benz</title>
 </head>
 
@@ -28,7 +28,7 @@
         <!-- /.header -->
         <div class="big-banner">
             <div class="big-banner__label">
-                <img src="./img/illiquid/2386.png" alt="Mercedes-Benz">
+                <img src="./src/img/illiquid/2386.png" alt="Mercedes-Benz">
                 <div>
                     <span id="number">10%</span>
                     <span id="text">Sale</span>
@@ -51,33 +51,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="slider__images">
-                    <div class="slider__images-slide">
-                        <img src="./img/slider1/c-class.png" alt="slide">
-                    </div>
-                    <div class="slider__images-slide">
-                        <img src="./img/slider1/c-class.png" alt="slide">
-                    </div>
-                    <div class="slider__images-slide">
-                        <img src="./img/slider1/c-class.png" alt="slide">
-                    </div>
-                    <div class="slider__images-slide">
-                        <img src="./img/slider1/c-class.png" alt="slide">
-                    </div>
-                    <div class="slider__images-slide">
-                        <img src="./img/slider1/c-class.png" alt="slide">
-                    </div>
-                    <div class="slider__images-slide">
-                        <img src="./img/slider1/c-class.png" alt="slide">
-                    </div>
-                    <div class="slider__images-slide">
-                        <img src="./img/slider1/c-class.png" alt="slide">
-                    </div>
-                    <div class="slider__images-slide">
-                        <img src="./img/slider1/c-class.png" alt="slide">
-                    </div>
-                    <div class="slider__images-slide">
-                        <img src="./img/slider1/c-class.png" alt="slide">
+                <div class="slider__wrapper">
+                    <div class="slider__images">
+                        <img class="slider__images-slide" src="./src/img/slider1/c-class.png" alt="slide">
+                        <img class="slider__images-slide" src="./src/img/slider1/c-class.png" alt="slide">
+                        <img class="slider__images-slide" src="./src/img/slider1/c-class.png" alt="slide">
+                        <img src="./src/img/slider2/image1.png" alt="">
+                        <img src="./src/img/slider2/image2.png" alt="">
+                        <img src="./src/img/slider2/image3.png" alt="">
+                        <img src="./src/img/slider2/image4.png" alt="">
                     </div>
                 </div>
             </div>
@@ -98,10 +80,10 @@
                     </div>
                 </div>
                 <div class="slider__images">
-                    <img src="./img/slider2/image1.png" alt="">
-                    <img src="./img/slider2/image2.png" alt="">
-                    <img src="./img/slider2/image3.png" alt="">
-                    <img src="./img/slider2/image4.png" alt="">
+                    <img src="./src/img/slider2/image1.png" alt="">
+                    <img src="./src/img/slider2/image2.png" alt="">
+                    <img src=".src/img/slider2/image3.png" alt="">
+                    <img src="./src/img/slider2/image4.png" alt="">
                 </div>
             </div>
             <!-- /.slider2 -->
@@ -279,7 +261,30 @@
     </div>
     <!-- /.container -->
 
-    <script src="./script/index.js"></script>
+    <script src="./src/script/index.js"></script>
+    <script>
+        const carousel = new SliderCarousel({
+            main: '.slider__wrapper',
+            wrap: '.slider__images',
+            next: '.slider__navigation__arrows-next',
+            prev: '.slider__navigation__arrows-prev',
+
+            slidesToShow: 4,
+            infinity: true,
+
+            responsive: [{
+                breakpoint: 1024,
+                slidesToShow: 2
+            },
+            {
+                breakpoint: 1024,
+                slidesToShow: 2
+            },
+            ]
+        });
+
+        carousel.init();
+    </script>
 </body>
 
 </html>
