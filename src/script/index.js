@@ -8,7 +8,7 @@ class SliderCarousel {
         prev,
         infinity = true,
         position = 0,
-        slidesToShow = 3
+        slidesToShow = 5
     }) {
         this.main = document.querySelector(main);
         this.wrap = document.querySelector(wrap);
@@ -42,7 +42,7 @@ class SliderCarousel {
         style.textContent = `
             .my-slider {
                 overflow: hidden !important;
-                width: 1400px;
+                width: 1500px;
             }
 
             .my-slider__wrap {
@@ -62,6 +62,7 @@ class SliderCarousel {
         style.id = 'sliderCarusel-style';
 
         document.head.appendChild(style)
+        const t = document.querySelectorAll('.my-slider__wrap')
     }
 
     controlSlider() {
@@ -92,5 +93,6 @@ class SliderCarousel {
             `
         }
     }
+
 }
 

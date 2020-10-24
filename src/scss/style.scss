@@ -71,9 +71,13 @@
 }
 
 .slider {
+
     // &__images {
     //     display: flex;
     // }
+    &__images-slide {
+        padding-right: 50px;
+    }
 
     &__navigation {
         padding: 30px 0 30px 0;
