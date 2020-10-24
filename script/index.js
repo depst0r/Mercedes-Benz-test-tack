@@ -1,0 +1,5 @@
+// slider
+document.addEventListener('DOMContentLoaded', () => {
+
+})
+
