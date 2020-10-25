@@ -83,6 +83,13 @@
   padding-left: 5%;
 }
 
+.slider hr {
+  width: 80%;
+  height: 1px;
+  background-color: #E5E5E5;
+  border: none;
+}
+
 .slider__images-slide {
   padding-right: 50px;
 }
@@ -92,6 +99,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .slider__navigation__arrows-next {
@@ -145,5 +155,12 @@
   background: black;
   width: 1400px;
   height: 300px;
+}
+
+.article,
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=style.css.map */
