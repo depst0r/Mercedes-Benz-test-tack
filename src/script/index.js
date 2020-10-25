@@ -8,7 +8,7 @@ class SliderCarousel {
         prev,
         infinity = true,
         position = 0,
-        slidesToShow = 5
+        slidesToShow = 3
     }) {
         this.main = document.querySelector(main);
         this.wrap = document.querySelector(wrap);
@@ -42,21 +42,22 @@ class SliderCarousel {
         style.textContent = `
             .my-slider {
                 overflow: hidden !important;
-                width: 1500px;
+                max-width: 85%;
+                
             }
 
             .my-slider__wrap {
                 display: flex ;
-                transition: transform 0.5 !important;
+                transition: transform 0.5 ease!important;
                 will-change: transform !important;
             }
 
             .my-slider__item {
-                
                 align-items: center;
                 justify-content: center;
-                flex: 0 0 ${this.options.widthSlide}% !important;
+                flex: 0 0 20% !important;
                 margin: auto 0 !important;
+                max-width: 45% !important;
             }
         `;
         style.id = 'sliderCarusel-style';
@@ -95,4 +96,3 @@ class SliderCarousel {
     }
 
 }
-
