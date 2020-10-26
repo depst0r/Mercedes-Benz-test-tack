@@ -236,10 +236,18 @@
   height: 600px;
 }
 
+.form__user__foto img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.form__user__review {
+  color: white;
+}
+
 .form__user__rating {
   overflow: hidden;
   width: 265px;
-  margin: 0 auto;
 }
 
 .form__user__rating:not(:checked) input {
@@ -248,13 +256,12 @@
 
 .form__user__rating:not(:checked) label {
   float: right;
-  width: 42px;
+  width: 22px;
   padding: 0;
   cursor: pointer;
-  font-size: 32px;
+  font-size: 15px;
   line-height: 32px;
-  color: lightgrey;
-  text-shadow: 1px 1px #bbb;
+  color: #aaddfa;
 }
 
 .form__user__rating:not(:checked) label::before {
@@ -262,15 +269,14 @@
 }
 
 .form__user__rating input:checked ~ label {
-  color: gold;
-  text-shadow: 1px 1px #c60;
+  color: #00A3FF;
 }
 
 .form__user__rating:not(:checked) label:hover {
-  color: gold;
+  color: #00A3FF;
 }
 
 .form__user__rating:not(:checked) > label:hover ~ label {
-  color: gold;
+  color: #00A3FF;
 }
 /*# sourceMappingURL=style.css.map */
