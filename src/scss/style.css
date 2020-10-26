@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   fonst-family: "Blacker";
   src: url("../fonts/blacker-sans-display-trial.extralight-italic.ttf");
@@ -182,6 +183,7 @@
   height: 30px;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
 .article__information button:hover {
@@ -209,6 +211,7 @@
   border: none;
   width: 170px;
   height: 40px;
+  cursor: pointer;
 }
 
 .buttons__group button:hover {
@@ -220,5 +223,54 @@
 
 .buttons__central {
   margin: 20px 0;
+}
+
+.form__link a {
+  text-decoration: none;
+  color: black;
+}
+
+.form__body {
+  background-color: black;
+  width: 100%;
+  height: 600px;
+}
+
+.form__user__rating {
+  overflow: hidden;
+  width: 265px;
+  margin: 0 auto;
+}
+
+.form__user__rating:not(:checked) input {
+  display: none;
+}
+
+.form__user__rating:not(:checked) label {
+  float: right;
+  width: 42px;
+  padding: 0;
+  cursor: pointer;
+  font-size: 32px;
+  line-height: 32px;
+  color: lightgrey;
+  text-shadow: 1px 1px #bbb;
+}
+
+.form__user__rating:not(:checked) label::before {
+  content: '★';
+}
+
+.form__user__rating input:checked ~ label {
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}
+
+.form__user__rating:not(:checked) label:hover {
+  color: gold;
+}
+
+.form__user__rating:not(:checked) > label:hover ~ label {
+  color: gold;
 }
 /*# sourceMappingURL=style.css.map */

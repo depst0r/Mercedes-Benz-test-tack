@@ -1,3 +1,7 @@
+@mixin d-flex {
+    display: flex;
+}
+
 @font-face {
     fonst-family: "Blacker";
     src: url('../fonts/blacker-sans-display-trial.extralight-italic.ttf');
@@ -28,7 +32,7 @@
     }
 
     &__menu {
-        display: flex;
+        @include d-flex;
         align-items: center;
 
         a {
@@ -44,7 +48,7 @@
     }
 
     &__inputs {
-        display: flex;
+        @include d-flex;
         align-items: center;
 
         input {
@@ -55,12 +59,12 @@
 }
 
 .big-banner {
-    display: flex;
+    @include d-flex;
     align-items: flex-end;
 
     &__label {
         position: relative;
-        display: flex;
+        @include d-flex;
         align-items: flex-end;
         // background-image: url('../img/illiquid/2386.png');
         // width: 100%;
@@ -87,7 +91,7 @@
 
     &__navigation {
         padding: 30px 0 30px 0;
-        display: flex;
+        @include d-flex;
         align-items: center;
 
         &__arrows-next {
@@ -129,7 +133,7 @@
         }
 
         &__arrows {
-            display: flex;
+            @include d-flex;
         }
     }
 }
@@ -153,13 +157,13 @@
 .wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    @include d-flex;
 }
 
 .article {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    @include d-flex;
 
     &__information {
         display: grid;
@@ -172,6 +176,7 @@
             height: 30px;
             outline: none;
             border: none;
+            cursor: pointer;
         }
 
         button:hover {
@@ -201,6 +206,7 @@
             border: none;
             width: 170px;
             height: 40px;
+            cursor: pointer;
         }
 
         button:hover {
@@ -212,6 +218,73 @@
 
     &__central {
         margin: 20px 0;
+    }
+}
+
+.form {
+    &__link {
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+
+    &__body {
+        background-color: black;
+        width: 100%;
+        height: 600px;
+    }
+}
+
+.form {
+    &__user {
+        &__rating {
+            overflow: hidden;
+            width: 265px;
+            margin: 0 auto;
+        }
+
+        &__rating:not(:checked) {
+            input {
+                display: none;
+            }
+        }
+
+        &__rating:not(:checked) {
+            label {
+                float: right;
+                width: 42px;
+                padding: 0;
+                cursor: pointer;
+                font-size: 32px;
+                line-height: 32px;
+                color: lightgrey;
+                text-shadow: 1px 1px #bbb;
+            }
+        }
+
+        &__rating:not(:checked) {
+            label::before {
+                content: '★';
+            }
+        }
+
+        &__rating {
+            input:checked~label {
+                color: gold;
+                text-shadow: 1px 1px #c60;
+            }
+        }
+
+        &__rating:not(:checked) {
+            label:hover {
+                color: gold;
+            }
+        }
+
+        &__rating:not(:checked)>label:hover~label {
+            color: gold;
+        }
     }
 }
 
