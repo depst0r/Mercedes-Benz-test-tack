@@ -1,3 +1,6 @@
+
+
+
 'use strict'
 class SliderCarousel {
     constructor({
@@ -87,3 +90,7 @@ class SliderCarousel {
         }
     }
 }
+
+
+
+

@@ -2,141 +2,141 @@
     display: flex;
 }
 
-@font-face {
-    fonst-family: "Blacker";
-    src: url('../fonts/blacker-sans-display-trial.extralight-italic.ttf');
-}
-
-.container {
-    max-width: 1200px;
-    min-width: 320px;
-    margin: auto;
-
-}
-
 .header {
-    margin-left: 4%;
-    width: 100%;
-    padding: 70px 32px;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+    margin: auto;
+    max-width: 1920px;
 
-    &__logo {
-        background-image: url(../img/logo.png);
-        width: 200px;
-        height: 53px;
+    &__hero {
+        background: url(../src/img/illiquid/2386.png) no-repeat;
+        background-size: contain;
+        padding-top: 120px;
+        padding-bottom: 370px;
+    }
+}
+
+.pd {
+    padding: 0;
+}
+
+.navbar {
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 54px;
     }
 
     &__menu {
-        @include d-flex;
-        align-items: center;
+        display: flex;
 
-        a {
-            margin: 0 7px;
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-        }
-
-        a:hover {
-            color: #4c665d;
+        li {
+            list-style-type: none;
         }
     }
 
-    &__inputs {
-        @include d-flex;
-        align-items: center;
+    &__li-down {
+        position: absolute;
+        background: black;
+        color: white;
+        padding-left: 0;
+        padding-right: 3rem;
+        display: none;
 
-        input {
-            margin: 0 8px;
+        li {
+            padding: 10px;
         }
-    }
-
-}
-
-.big-banner {
-    @include d-flex;
-    align-items: flex-end;
-
-    &__label {
-        position: relative;
-        @include d-flex;
-        align-items: flex-end;
-        // background-image: url('../img/illiquid/2386.png');
-        // width: 100%;
-        // height: 100%;
-
     }
 }
 
 .main {
-    padding-left: 5%;
+    padding-left: 200px;
+    padding-right: 200px;
+    max-width: 1920px;
+    margin: auto;
 }
 
-.slider {
-    hr {
-        width: 80%;
-        height: 1px;
-        background-color: #E5E5E5;
-        border: none;
+
+
+.big-banner {
+    @include d-flex;
+
+    img {
+        width: 1400px;
     }
 
-    &__images-slide {
-        padding-right: 50px;
+    &__label {
+        margin: auto;
     }
+}
 
-    &__navigation {
-        padding: 30px 0 30px 0;
-        @include d-flex;
-        align-items: center;
+.main {
+    min-width: 1200px;
+    max-width: 1200px;
+    margin: auto;
 
-        &__arrows-next {
-            cursor: pointer;
-
-            i {
-                border: solid black;
-                border-width: 0 3px 3px 0;
-                display: inline-block;
-                padding: 3px;
-                transform: rotate(-45deg);
-                -webkit-transform: rotate(-45deg);
-            }
-        }
-
-        &__arrows-prev {
-            cursor: pointer;
-
-            i {
-                border: solid black;
-                border-width: 0 3px 3px 0;
-                display: inline-block;
-                padding: 3px;
-                transform: rotate(135deg);
-                -webkit-transform: rotate(135deg);
-            }
-        }
-
-        &__lable {
-            span {
-                font-size: 24px;
-            }
-        }
-
-        &__dash {
-            background-color: #1F1F1F;
-            width: 1023px;
+    .slider {
+        hr {
+            width: 80%;
             height: 1px;
+            background-color: #E5E5E5;
+            border: none;
         }
 
-        &__arrows {
+        &__images-slide {
+            padding-right: 50px;
+        }
+
+        &__navigation {
+            padding: 30px 0 30px 0;
             @include d-flex;
+            align-items: center;
+
+            &__arrows-next {
+                cursor: pointer;
+
+                i {
+                    border: solid black;
+                    border-width: 0 3px 3px 0;
+                    display: inline-block;
+                    padding: 3px;
+                    transform: rotate(-45deg);
+                    -webkit-transform: rotate(-45deg);
+                }
+            }
+
+            &__arrows-prev {
+                cursor: pointer;
+
+                i {
+                    border: solid black;
+                    border-width: 0 3px 3px 0;
+                    display: inline-block;
+                    padding: 3px;
+                    transform: rotate(135deg);
+                    -webkit-transform: rotate(135deg);
+                }
+            }
+
+            &__lable {
+                span {
+                    font-size: 24px;
+                }
+            }
+
+            &__dash {
+                background-color: #1F1F1F;
+                width: 1023px;
+                height: 1px;
+            }
+
+            &__arrows {
+                @include d-flex;
+            }
         }
     }
 }
+
+
 
 .coupon {
     &__body-title {
@@ -237,18 +237,7 @@
 }
 
 .form {
-    &__user {
-        &__foto {
-            img {
-                width: 50px;
-                border-radius: 50%;
-            }
-        }
-
-        &__review {
-            color: white;
-        }
-
+    &__popup {
         &__rating {
             overflow: hidden;
             width: 265px;
@@ -293,6 +282,35 @@
 
         &__rating:not(:checked)>label:hover~label {
             color: #00A3FF
+        }
+    }
+
+    #button {
+        outline: none;
+        border: none;
+        cursor: pointer;
+        width: 350px;
+        height: 36px;
+        background: #00A3FF;
+        border-radius: 2px;
+    }
+
+    #button:hover {
+        transform: translateY(4px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+        color: #FFF;
+    }
+
+    &__user {
+        &__foto {
+            img {
+                width: 50px;
+                border-radius: 50%;
+            }
+        }
+
+        &__review {
+            color: white;
         }
     }
 }
