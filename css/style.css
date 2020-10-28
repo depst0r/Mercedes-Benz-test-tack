@@ -1,4 +1,9 @@
 @charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .header {
   margin: auto;
   max-width: 1920px;
@@ -58,26 +63,6 @@
   margin: auto;
 }
 
-.big-banner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.big-banner img {
-  width: 1400px;
-}
-
-.big-banner__label {
-  margin: auto;
-}
-
-.main {
-  min-width: 1200px;
-  max-width: 1200px;
-  margin: auto;
-}
-
 .main .slider hr {
   width: 80%;
   height: 1px;
@@ -87,6 +72,7 @@
 
 .main .slider__images-slide {
   padding-right: 50px;
+  width: 100%;
 }
 
 .main .slider__navigation {
@@ -129,13 +115,89 @@
   font-size: 24px;
 }
 
-.main .slider__navigation__dash {
-  background-color: #1F1F1F;
-  width: 1023px;
-  height: 1px;
+.main .slider__navigation__arrows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.main .slider__navigation__arrows {
+.main .slider2 hr {
+  width: 80%;
+  height: 1px;
+  background-color: #E5E5E5;
+  border: none;
+}
+
+.main .slider2__images {
+  width: 1920px;
+  height: 500px;
+}
+
+.main .slider2__images-slide1 {
+  padding-right: 50px;
+  width: 100%;
+  background: url(../../src/img/slider2/image2.png) no-repeat;
+}
+
+.main .slider2__images-slide2 {
+  padding-right: 50px;
+  width: 100%;
+  background: url(../../src/img/slider2/image3.png) no-repeat;
+}
+
+.main .slider2__images-slide3 {
+  padding-right: 50px;
+  width: 100%;
+  background: url(../../src/img/slider2/image4.png) no-repeat;
+}
+
+.main .slider2__images-slide4 {
+  padding-right: 50px;
+  width: 100%;
+  background: url(../../src/img/slider2/image1.png) no-repeat;
+}
+
+.main .slider2__navigation {
+  padding: 30px 0 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .slider2__navigation__arrows-next {
+  cursor: pointer;
+}
+
+.main .slider2__navigation__arrows-next i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.main .slider2__navigation__arrows-prev {
+  cursor: pointer;
+}
+
+.main .slider2__navigation__arrows-prev i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.main .slider2__navigation__lable span {
+  font-size: 24px;
+}
+
+.main .slider2__navigation__arrows {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -148,7 +210,6 @@
 
 .coupon__body {
   background: black;
-  width: 1400px;
   height: 300px;
 }
 
