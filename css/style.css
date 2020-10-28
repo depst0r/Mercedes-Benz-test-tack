@@ -128,33 +128,80 @@
   border: none;
 }
 
+.main .slider2__sale-red {
+  width: 100%;
+  height: auto;
+  -webkit-transform: rotate(-6.43deg);
+          transform: rotate(-6.43deg);
+}
+
+.main .slider2__sale-red::after {
+  content: 'скидки до -50%';
+  font-size: 16px;
+  color: white;
+  background-color: red;
+  padding: 5px;
+}
+
+.main .slider2__sale-red::before {
+  content: 'скидки до -50%';
+  font-size: 16px;
+  color: white;
+  background-color: red;
+  padding: 5px;
+}
+
 .main .slider2__images {
   width: 1920px;
-  height: 500px;
+  height: 525px;
 }
 
 .main .slider2__images-slide1 {
   padding-right: 50px;
   width: 100%;
   background: url(../../src/img/slider2/image2.png) no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main .slider2__images-slide2 {
   padding-right: 50px;
   width: 100%;
   background: url(../../src/img/slider2/image3.png) no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main .slider2__images-slide3 {
   padding-right: 50px;
   width: 100%;
   background: url(../../src/img/slider2/image4.png) no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main .slider2__images-slide4 {
   padding-right: 50px;
   width: 100%;
   background: url(../../src/img/slider2/image1.png) no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main .slider2__navigation {

@@ -124,33 +124,63 @@
             border: none;
         }
 
+        &__sale-red {
+            width: 100%;
+            height: auto;
+            transform: rotate(-6.43deg);
+        }
+
+        &__sale-red::after {
+            content: 'скидки до -50%';
+            font-size: 16px;
+            color: white;
+            background-color: red;
+            padding: 5px;
+        }
+
+        &__sale-red::before {
+            content: 'скидки до -50%';
+            font-size: 16px;
+            color: white;
+            background-color: red;
+            padding: 5px;
+        }
+
         &__images {
             width: 1920px;
-            height: 500px;
+            height: 525px;
         }
 
         &__images-slide1 {
             padding-right: 50px;
             width: 100%;
             background: url(../../src/img/slider2/image2.png) no-repeat;
+            display: flex;
+            align-items: center;
         }
 
         &__images-slide2 {
             padding-right: 50px;
             width: 100%;
             background: url(../../src/img/slider2/image3.png) no-repeat;
+            display: flex;
+            align-items: center;
         }
 
         &__images-slide3 {
             padding-right: 50px;
             width: 100%;
             background: url(../../src/img/slider2/image4.png) no-repeat;
+            display: flex;
+            align-items: center;
         }
 
         &__images-slide4 {
             padding-right: 50px;
             width: 100%;
             background: url(../../src/img/slider2/image1.png) no-repeat;
+            display: flex;
+            align-items: center;
         }
 
         &__navigation {
