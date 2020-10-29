@@ -10,10 +10,9 @@
 }
 
 .header__hero {
-  background: url(../src/img/illiquid/2386.png) no-repeat;
-  background-size: contain;
-  padding-top: 120px;
-  padding-bottom: 370px;
+  background: url(../src/img/illiquid/2386.png) center center no-repeat;
+  background-size: cover;
+  min-height: 470px;
 }
 
 .pd {
