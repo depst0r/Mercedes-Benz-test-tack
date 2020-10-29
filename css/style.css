@@ -20,6 +20,41 @@
   padding: 0;
 }
 
+.block {
+  display: none;
+}
+
+.navbar {
+  padding: 50px 200px;
+}
+
+.navbar__menu li {
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.navbar__menu li:hover {
+  color: #8f8f8f;
+}
+
+.navbar__li-down {
+  position: absolute;
+  background: black;
+  color: white;
+  padding-left: 0;
+  padding-right: 3rem;
+}
+
+.navbar__li-down li {
+  padding: 10px;
+}
+
+.navbar__inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .navbar__wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -41,19 +76,6 @@
 
 .navbar__menu li {
   list-style-type: none;
-}
-
-.navbar__li-down {
-  position: absolute;
-  background: black;
-  color: white;
-  padding-left: 0;
-  padding-right: 3rem;
-  display: none;
-}
-
-.navbar__li-down li {
-  padding: 10px;
 }
 
 .select {
@@ -128,6 +150,15 @@
   width: 21px;
   height: 9px;
   margin-right: 1px;
+}
+
+.search {
+  padding: 0 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 121px;
 }
 
 .main {

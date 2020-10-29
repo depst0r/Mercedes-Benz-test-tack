@@ -22,7 +22,40 @@
     padding: 0;
 }
 
+.block {
+    display: none;
+}
+
 .navbar {
+    padding: 50px 200px;
+
+    &__menu {
+        li {
+            list-style-type: none;
+            cursor: pointer;
+
+            &:hover {
+                color: #8f8f8f;
+            }
+        }
+    }
+
+    &__li-down {
+        position: absolute;
+        background: black;
+        color: white;
+        padding-left: 0;
+        padding-right: 3rem;
+
+        li {
+            padding: 10px;
+        }
+    }
+
+    &__inputs {
+        display: flex;
+    }
+
     &__wrap {
         display: flex;
         align-items: center;
@@ -37,23 +70,7 @@
             list-style-type: none;
         }
     }
-
-    &__li-down {
-        position: absolute;
-        background: black;
-        color: white;
-        padding-left: 0;
-        padding-right: 3rem;
-        display: none;
-
-        li {
-            padding: 10px;
-        }
-    }
 }
-
-
-
 
 .select {
     margin: 0 auto;
@@ -119,6 +136,13 @@
     width: 21px;
     height: 9px;
     margin-right: 1px;
+}
+
+.search {
+    padding: 0 10px;
+    cursor: pointer;
+    display: flex;
+    width: 121px;
 }
 
 .main {
