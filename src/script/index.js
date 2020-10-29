@@ -1,7 +1,4 @@
 
-
-
-'use strict'
 class SliderCarousel {
     constructor({
         main,
@@ -89,8 +86,51 @@ class SliderCarousel {
             `
         }
     }
-}
+};
 
+// list down header
+
+const menuItem = document.querySelector('.menu__down'),
+    downList = document.querySelector('.navbar__li-down');
+
+function menuDown(menu, list) {
+    menu.addEventListener('click', () => {
+        list.classList.toggle('block')
+    })
+};
+
+// custom select 
+const select = () => {
+    let selectHeader = document.querySelectorAll('.select__header');
+    let selectItem = document.querySelectorAll('.select__item');
+
+    selectHeader.forEach(item => {
+        item.addEventListener('click', selectToggle)
+    });
+
+    selectItem.forEach(item => {
+        item.addEventListener('click', selectChoose)
+    });
+
+    function selectToggle() {
+        this.parentElement.classList.toggle('is-active');
+    }
+
+    function selectChoose() {
+        let text = this.innerHTML;
+        sel = this.closest('.select'),
+            currentText = sel.querySelector('.select__current');
+        currentText.innerHTML = text;
+        sel.classList.remove('is-active');
+
+    }
+
+};
+
+// function call
+
+select();
+menuDown(menuItem, downList);
 
 
 
