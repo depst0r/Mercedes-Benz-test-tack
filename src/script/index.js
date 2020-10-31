@@ -4,11 +4,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const downList = document.querySelector('.navbar__li-down');
     const selectHeader = document.querySelectorAll('.select__header');
     const selectItem = document.querySelectorAll('.select__item');
-    const container = document.querySelector('.slider-container');
-    const track = document.querySelector('.slider-track');
+    const container = document.querySelector('.slider');
+    const track = document.querySelector('.slider__track');
     const btnPrev = document.querySelector('.slider__navigation__arrows-prev');
     const btnNext = document.querySelector('.slider__navigation__arrows-next');
-    const items = document.querySelectorAll('.slider-item');
+    const items = document.querySelectorAll('.slider__item');
+
+    const container2 = document.querySelector('.slider2');
+    const track2 = document.querySelector('.slider2__track');
+    const btnPrev2 = document.querySelector('.slider2__navigation__arrows-prev');
+    const btnNext2 = document.querySelector('.slider2__navigation__arrows-next');
+    const items2 = document.querySelectorAll('.slider2__item');
+
 
     // list down header
     function menuDown(menu, list) {
@@ -43,12 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     };
 
-    // const container = document.querySelector('.slider-container');
-    // const track = document.querySelector('.slider-track');
-    // const btnPrev = document.querySelector('.slider__navigation__arrows-prev');
-    // const btnNext = document.querySelector('.slider__navigation__arrows-next');
-    // const items = document.querySelectorAll('.slider-item');
-
     const slider = (visible = 1, scroll = 1, wrapper, road, next, prev, slides) => {
         let position = 0;
         const sliderToShow = visible;
@@ -65,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
         next.addEventListener('click', () => {
             const itemLeft = itemsCount - (Math.abs(position) + sliderToShow * itemWidth) / itemWidth;
             position -= itemLeft >= sliderToScroll ? movePosition : itemLeft * itemWidth;
-            console.log(itemLeft)
             setPosition();
             checkBtns();
         });
@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // function call
     slider(3, 1, container, track, btnNext, btnPrev, items);
+    slider(4, 1, container2, track2, btnNext2, btnPrev2, items2);
     select();
     menuDown(menuItem, downList);
 

@@ -18,28 +18,32 @@
     }
 }
 
-
-.wrapper-slider {
-    width: 1600px;
-    margin: auto;
-}
-
-.slider-container {
+.slider {
     overflow: hidden;
+
+    &__track {
+        display: flex;
+        transition: .2s;
+    }
+
+    &__item {
+        width: 510px;
+        min-width: 507px;
+    }
 }
 
-.slider-track {
-    display: flex;
-    transition: .2s;
-}
+.slider2 {
+    overflow: hidden;
 
-.slider-item {
+    &__track {
+        display: flex;
+        transition: .2s;
+    }
 
-    min-width: 490px;
-}
-
-.slider-buttons {
-    text-align: center;
+    &__item {
+        width: 510px;
+        min-width: 507px;
+    }
 }
 
 .pd {

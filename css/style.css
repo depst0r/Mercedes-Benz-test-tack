@@ -15,16 +15,11 @@
   min-height: 470px;
 }
 
-.wrapper-slider {
-  width: 1600px;
-  margin: auto;
-}
-
-.slider-container {
+.slider {
   overflow: hidden;
 }
 
-.slider-track {
+.slider__track {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,12 +27,26 @@
   transition: .2s;
 }
 
-.slider-item {
-  min-width: 490px;
+.slider__item {
+  width: 510px;
+  min-width: 507px;
 }
 
-.slider-buttons {
-  text-align: center;
+.slider2 {
+  overflow: hidden;
+}
+
+.slider2__track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.slider2__item {
+  width: 510px;
+  min-width: 507px;
 }
 
 .pd {
