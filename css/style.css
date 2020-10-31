@@ -15,6 +15,31 @@
   min-height: 470px;
 }
 
+.wrapper-slider {
+  width: 1600px;
+  margin: auto;
+}
+
+.slider-container {
+  overflow: hidden;
+}
+
+.slider-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.slider-item {
+  min-width: 490px;
+}
+
+.slider-buttons {
+  text-align: center;
+}
+
 .pd {
   padding: 0;
 }
@@ -495,12 +520,63 @@
   color: #FFF;
 }
 
-.form__user__foto img {
+.form__review {
+  color: white;
+}
+
+.form {
+  padding-left: 200px;
+  padding-right: 200px;
+  max-width: 1920px;
+  margin: auto;
+}
+
+.form__user-dara {
+  padding-top: 40px;
+}
+
+.form__header-arrow {
+  color: white;
+  min-width: 100px;
+  padding-top: 40px;
+}
+
+.form__data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form__user-photo {
+  padding: 40px;
+}
+
+.form__user-text {
+  width: 95%;
+}
+
+.form__rating {
+  color: white;
+}
+
+.form__user-text {
+  color: white;
+}
+
+.form__user-name {
+  color: white;
+}
+
+.form__user-photo img {
   width: 50px;
   border-radius: 50%;
 }
 
-.form__user__review {
+.form__button button {
+  width: 350px;
+  height: 36px;
+  background: #00A3FF;
+  border-radius: 2px;
   color: white;
 }
 /*# sourceMappingURL=style.css.map */

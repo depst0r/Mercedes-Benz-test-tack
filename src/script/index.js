@@ -1,136 +1,92 @@
+document.addEventListener('DOMContentLoaded', () => {
 
-class SliderCarousel {
-    constructor({
-        main,
-        wrap,
-        next,
-        prev,
-        infinity = true,
-        position = 0,
-        slidesToShow = 5
-    }) {
-        this.main = document.querySelector(main);
-        this.wrap = document.querySelector(wrap);
-        this.next = document.querySelector(next);
-        this.prev = document.querySelector(prev);
-        this.slides = document.querySelector(wrap).children;
-        this.slidesToShow = slidesToShow;
-        this.options = {
-            position,
-            infinity,
-            widthSlide: Math.floor(100 / this.slidesToShow)
-        };
-    }
+    const menuItem = document.querySelector('.menu__down');
+    const downList = document.querySelector('.navbar__li-down');
+    const selectHeader = document.querySelectorAll('.select__header');
+    const selectItem = document.querySelectorAll('.select__item');
+    const container = document.querySelector('.slider-container');
+    const track = document.querySelector('.slider-track');
+    const btnPrev = document.querySelector('.slider__navigation__arrows-prev');
+    const btnNext = document.querySelector('.slider__navigation__arrows-next');
+    const items = document.querySelectorAll('.slider-item');
 
-    init() {
-        this.addGlobalClass();
-        this.addStyle();
-        this.controlSlider();
-    }
+    // list down header
+    function menuDown(menu, list) {
+        menu.addEventListener('click', () => {
+            list.classList.toggle('block')
+        })
+    };
 
-    addGlobalClass() {
-        this.main.classList.add('my-slider');
-        this.wrap.classList.add('my-slider__wrap');
-        for (const item of this.slides) {
-            item.classList.add('my-slider__item')
+    // custom select 
+    const select = () => {
+
+        selectHeader.forEach(item => {
+            item.addEventListener('click', selectToggle)
+        });
+
+        selectItem.forEach(item => {
+            item.addEventListener('click', selectChoose)
+        });
+
+        function selectToggle() {
+            this.parentElement.classList.toggle('is-active');
         }
-    }
 
-    addStyle() {
-        const style = document.createElement('style');
-        style.textContent = `
-            .my-slider {
-                overflow: hidden !important;
-            }
-            .my-slider__wrap {
-                display: flex ;
-                transition: transform 0.6!important;
-                will-change: transform !important;
-            }
-            .my-slider__item {
-                flex: 0 0 \`${this.options.widthSlide}%\`;
-                max-width: \`${this.options.widthSlide}%\`;
-            }
-        `;
-        style.id = 'sliderCarusel-style';
+        function selectChoose() {
+            let text = this.innerHTML;
+            sel = this.closest('.select'),
+                currentText = sel.querySelector('.select__current');
+            currentText.innerHTML = text;
+            sel.classList.remove('is-active');
 
-        document.head.appendChild(style)
-        const t = document.querySelectorAll('.my-slider__wrap')
-    }
-
-    controlSlider() {
-        this.prev.addEventListener('click', this.prevSlider.bind(this));
-        this.next.addEventListener('click', this.nextSlider.bind(this));
-    }
-
-    prevSlider() {
-        if (this.options.infinity || this.options.position > 0) {
-            --this.options.position;
-            if (this.options.position < 0) {
-                this.options.position = this.slides.length - this.slidesToShow
-            }
-            this.wrap.style.transform = `
-        translateX(-${this.options.position * this.options.widthSlide}%)
-        `
         }
+
+    };
+
+    // const container = document.querySelector('.slider-container');
+    // const track = document.querySelector('.slider-track');
+    // const btnPrev = document.querySelector('.slider__navigation__arrows-prev');
+    // const btnNext = document.querySelector('.slider__navigation__arrows-next');
+    // const items = document.querySelectorAll('.slider-item');
+
+    const slider = (visible = 1, scroll = 1, wrapper, road, next, prev, slides) => {
+        let position = 0;
+        const sliderToShow = visible;
+        const sliderToScroll = scroll;
+        const itemsCount = slides.length;
+        const itemWidth = wrapper.clientWidth / sliderToShow;
+        const movePosition = sliderToScroll * itemWidth;
+
+        slides.forEach((item) => {
+            item.style.minWidth = `${itemWidth}px`;
+        });
+
+
+        next.addEventListener('click', () => {
+            const itemLeft = itemsCount - (Math.abs(position) + sliderToShow * itemWidth) / itemWidth;
+            position -= itemLeft >= sliderToScroll ? movePosition : itemLeft * itemWidth;
+            console.log(itemLeft)
+            setPosition();
+            checkBtns();
+        });
+
+        prev.addEventListener('click', () => {
+            const itemLeft = Math.abs(position) / itemWidth;
+            position += itemLeft >= sliderToScroll ? movePosition : itemLeft * itemWidth;
+            setPosition();
+            checkBtns();
+        });
+
+
+        const setPosition = () => road.style.transform = `translateX(${position}px)`;
     }
+    // function call
+    slider(3, 1, container, track, btnNext, btnPrev, items);
+    select();
+    menuDown(menuItem, downList);
 
-    nextSlider() {
-        if (this.options.infinity || this.options.position < this.slides.length - this.slidesToShow) {
-            ++this.options.position;
-            if (this.options.position > this.slides.length - this.slidesToShow) {
-                this.options.position = 0;
-            }
-            this.wrap.style.transform = `
-            translateX(-${this.options.position * this.options.widthSlide}%)
-            `
-        }
-    }
-};
 
-// list down header
-
-const menuItem = document.querySelector('.menu__down'),
-    downList = document.querySelector('.navbar__li-down');
-
-function menuDown(menu, list) {
-    menu.addEventListener('click', () => {
-        list.classList.toggle('block')
-    })
-};
-
-// custom select 
-const select = () => {
-    let selectHeader = document.querySelectorAll('.select__header');
-    let selectItem = document.querySelectorAll('.select__item');
-
-    selectHeader.forEach(item => {
-        item.addEventListener('click', selectToggle)
-    });
-
-    selectItem.forEach(item => {
-        item.addEventListener('click', selectChoose)
-    });
-
-    function selectToggle() {
-        this.parentElement.classList.toggle('is-active');
-    }
-
-    function selectChoose() {
-        let text = this.innerHTML;
-        sel = this.closest('.select'),
-            currentText = sel.querySelector('.select__current');
-        currentText.innerHTML = text;
-        sel.classList.remove('is-active');
-
-    }
-
-};
-
-// function call
-
-select();
-menuDown(menuItem, downList);
+});
 
 
 
