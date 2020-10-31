@@ -58,9 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const itemWidth = wrapper.clientWidth / sliderToShow;
         const movePosition = sliderToScroll * itemWidth;
 
-        slides.forEach((item) => {
-            item.style.minWidth = `${itemWidth}px`;
-        });
+        // slides.forEach((item) => {
+        //     item.style.minWidth = `${itemWidth}px`;
+        // });
 
 
         next.addEventListener('click', () => {
