@@ -129,6 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
     // function call
+
+    fetch('http://localhost:3000/user')
+        .then(res => res.json())
+        .then(res => console.log(res))
     modalPoPup();
     slider(3, 1, container, track, btnNext, btnPrev, items);
     slider(3, 1, container2, track2, btnNext2, btnPrev2, items2);
