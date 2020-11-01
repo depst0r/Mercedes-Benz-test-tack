@@ -16,6 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnNext2 = document.querySelector('.slider2__navigation__arrows-next');
     const items2 = document.querySelectorAll('.slider2__item');
 
+    const modal = document.querySelector('.modal');
+    const btn = document.querySelector('.popupBtn');
+    const span = document.querySelector('.modal__close');
+    const form = document.querySelector('form');
+    const check = document.querySelector('#check1');
+    const check2 = document.querySelector('#check2');
+    const label = document.querySelectorAll('label');
 
     // list down header
     function menuDown(menu, list) {
@@ -80,7 +87,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const setPosition = () => road.style.transform = `translateX(${position}px)`;
     }
+
+    // modal
+    const modalPoPup = () => {
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
+
+    // form
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+    })
+
+    check.addEventListener('change', () => {
+        const chk = event.target
+
+        if (chk.tagName === 'INPUT' && chk.type === 'radio') {
+            console.log(chk.value)
+
+        }
+    })
+
+    check2.addEventListener('change', (event) => {
+        const chk = event.target
+
+        if (chk.tagName === 'INPUT' && chk.type === 'radio') {
+            console.log(chk.value)
+
+        }
+    })
     // function call
+    modalPoPup();
     slider(3, 1, container, track, btnNext, btnPrev, items);
     slider(3, 1, container2, track2, btnNext2, btnPrev2, items2);
     select();
