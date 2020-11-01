@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (chk.tagName === 'INPUT' && chk.type === 'radio') {
             console.log(chk.value)
 
-        }
+        };
     })
 
     check2.addEventListener('change', (event) => {
@@ -126,13 +126,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (chk.tagName === 'INPUT' && chk.type === 'radio') {
             console.log(chk.value)
 
-        }
-    })
-    // function call
+        };
+    });
 
-    fetch('http://localhost:3000/user')
-        .then(res => res.json())
-        .then(res => console.log(res))
+    const postData = (url, data) => {
+        const res = fetch(url, {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: data
+        });
+
+        return res.json();
+    }
+
+    const bindPostData = () => {
+
+    }
+    // function call
     modalPoPup();
     slider(3, 1, container, track, btnNext, btnPrev, items);
     slider(3, 1, container2, track2, btnNext2, btnPrev2, items2);
