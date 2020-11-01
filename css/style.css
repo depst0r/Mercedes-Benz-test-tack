@@ -599,7 +599,6 @@
   color: white;
 }
 
-/*modal*/
 /*form*/
 .form {
   padding-left: 200px;
@@ -715,5 +714,59 @@
 .form__user-text,
 .form__user-name {
   color: white;
+}
+
+.coupon__body {
+  background: black;
+  height: 300px;
+}
+
+.coupon__body-title span {
+  color: white;
+  font-size: 30px;
+}
+
+.coupon__body-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.coupon__body-main-sum {
+  background-color: white;
+  width: 393px;
+  height: 124px;
+  margin-left: 30px;
+}
+
+.coupon__body-main-sum span {
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 75px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.coupon__body-main-btn {
+  background-color: white;
+  width: 393px;
+  height: 124px;
+}
+
+.coupon__body-main-btn button {
+  background: linear-gradient(93.01deg, #00A3FF 3.99%, #0078BC 81.61%);
+  -webkit-box-shadow: 0px 0px 10px #00A3FF;
+          box-shadow: 0px 0px 10px #00A3FF;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 186px;
+  height: 36px;
 }
 /*# sourceMappingURL=style.css.map */

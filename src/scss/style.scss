@@ -584,11 +584,6 @@
     }
 }
 
-
-/*modal*/
-
-
-
 /*form*/
 .form {
     padding-left: 200px;
@@ -608,6 +603,7 @@
         overflow: auto;
         background-color: rgb(0, 0, 0);
         background-color: rgba(0, 0, 0, 0.7);
+
         &__content {
             margin: auto;
             padding: 20px;
@@ -615,18 +611,19 @@
             width: 750px;
             background-color: black;
         }
+
         &__content-form {
             form {
                 margin: auto;
-    
+
                 label {
                     color: white;
                 }
-    
+
                 #fit {
                     color: white;
                 }
-    
+
                 textarea {
                     width: 692px;
                     height: 200px;
@@ -635,7 +632,7 @@
                     box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
                     color: white;
                 }
-    
+
                 label {
                     cursor: pointer;
                     padding: 0 10px 0 0;
@@ -694,56 +691,6 @@
     }
 }
 
-.modal {
-    // display: none;
-    // position: fixed;
-    // z-index: 1;
-    // padding-top: 100px;
-    // left: 0;
-    // top: 0;
-    // width: 100%;
-    // height: 100%;
-    // overflow: auto;
-    // background-color: rgb(0, 0, 0);
-    // background-color: rgba(0, 0, 0, 0.7);
-
-    // &__content {
-    //     margin: auto;
-    //     padding: 20px;
-    //     border: 1px solid #888;
-    //     width: 750px;
-    //     background-color: black;
-    // }
-
-    // &__content-form {
-    //     form {
-    //         margin: auto;
-
-    //         label {
-    //             color: white;
-    //         }
-
-    //         #fit {
-    //             color: white;
-    //         }
-
-    //         textarea {
-    //             width: 692px;
-    //             height: 200px;
-    //             resize: none;
-    //             background: #222222;
-    //             box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
-    //             color: white;
-    //         }
-
-    //         label {
-    //             cursor: pointer;
-    //             padding: 0 10px 0 0;
-    //         }
-    //     }
-    // }
-}
-
 .btn>button {
     width: 350px;
     height: 36px;
@@ -756,6 +703,57 @@
 .form__user-text,
 .form__user-name {
     color: white;
+}
+
+.coupon {
+    &__body {
+        background: black;
+        height: 300px;
+
+        &-title {
+            span {
+                color: white;
+                font-size: 30px;
+            }
+        }
+
+        &-main {
+            display: flex;
+
+            &-sum {
+                background-color: white;
+                width: 393px;
+                height: 124px;
+                margin-left: 30px;
+
+                span {
+                    font-weight: 900;
+                    font-size: 64px;
+                    line-height: 75px;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                }
+            }
+
+            &-btn {
+                background-color: white;
+                width: 393px;
+                height: 124px;
+
+                button {
+                    background: linear-gradient(93.01deg, #00A3FF 3.99%, #0078BC 81.61%);
+                    box-shadow: 0px 0px 10px #00A3FF;
+                    border-radius: 2px;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    width: 186px;
+                    height: 36px;
+                }
+            }
+        }
+    }
 }
 
 
