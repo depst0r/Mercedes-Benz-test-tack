@@ -29,6 +29,11 @@
     &__item {
         width: 510px;
         min-width: 507px;
+
+        section {
+            position: absolute;
+            z-index: auto;
+        }
     }
 }
 
@@ -43,6 +48,11 @@
     &__item {
         width: 510px;
         min-width: 380px;
+
+        section {
+            position: absolute;
+            z-index: auto;
+        }
     }
 }
 

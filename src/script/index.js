@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // function call
     slider(3, 1, container, track, btnNext, btnPrev, items);
-    slider(4, 1, container2, track2, btnNext2, btnPrev2, items2);
+    slider(3, 1, container2, track2, btnNext2, btnPrev2, items2);
     select();
     menuDown(menuItem, downList);
 

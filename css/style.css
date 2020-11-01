@@ -32,6 +32,11 @@
   min-width: 507px;
 }
 
+.slider__item section {
+  position: absolute;
+  z-index: auto;
+}
+
 .slider2 {
   overflow: hidden;
 }
@@ -47,6 +52,11 @@
 .slider2__item {
   width: 510px;
   min-width: 380px;
+}
+
+.slider2__item section {
+  position: absolute;
+  z-index: auto;
 }
 
 .pd {
