@@ -2,8 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const menuItem = document.querySelector('.menu__down');
     const downList = document.querySelector('.navbar__li-down');
+
     const selectHeader = document.querySelectorAll('.select__header');
     const selectItem = document.querySelectorAll('.select__item');
+
     const container = document.querySelector('.slider');
     const track = document.querySelector('.slider__track');
     const btnPrev = document.querySelector('.slider__navigation__arrows-prev');
@@ -19,10 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.querySelector('.modal');
     const btn = document.querySelector('.popupBtn');
     const span = document.querySelector('.modal__close');
+
     const form = document.querySelector('form');
     const check = document.querySelector('#check1');
     const check2 = document.querySelector('#check2');
     const label = document.querySelectorAll('label');
+
+    const modalCoupon = document.querySelector('.popup-coupon');
+    const btnCoupon = document.querySelector('.coupon__btn')
+
+
 
     // list down header
     function menuDown(menu, list) {
@@ -31,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     };
 
-    // custom select 
+    // custom select
     const select = () => {
 
         selectHeader.forEach(item => {
@@ -89,18 +97,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // modal
-    const modalPoPup = () => {
-        btn.onclick = function () {
-            modal.style.display = "block";
+    // bnt,modal,span,form
+    const modalPoPup = (button, modalWindow) => {
+        button.onclick = function () {
+            modalWindow.style.display = "block";
         }
 
         span.onclick = function () {
-            modal.style.display = "none";
+            modalWindow.style.display = "none";
         }
 
         window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
+            if (event.target == modalWindow) {
+                modalWindow.style.display = "none";
             }
         }
     }
@@ -111,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
     })
 
-    check.addEventListener('change', () => {
+    check.addEventListener('change', (event) => {
         const chk = event.target
 
         if (chk.tagName === 'INPUT' && chk.type === 'radio') {
@@ -145,7 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
     // function call
-    modalPoPup();
+    modalPoPup(btn, modal);
+    modalPoPup(btnCoupon, modalCoupon);
     slider(3, 1, container, track, btnNext, btnPrev, items);
     slider(3, 1, container2, track2, btnNext2, btnPrev2, items2);
     select();
@@ -153,6 +163,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
-
-
 
