@@ -82,14 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const itemLeft = itemsCount - (Math.abs(position) + sliderToShow * itemWidth) / itemWidth;
             position -= itemLeft >= sliderToScroll ? movePosition : itemLeft * itemWidth;
             setPosition();
-            checkBtns();
         });
 
         prev.addEventListener('click', () => {
             const itemLeft = Math.abs(position) / itemWidth;
             position += itemLeft >= sliderToScroll ? movePosition : itemLeft * itemWidth;
             setPosition();
-            checkBtns();
         });
 
 
@@ -97,21 +95,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // modal
-    // bnt,modal,span,form
     const modalPoPup = (button, modalWindow) => {
         button.onclick = function () {
             modalWindow.style.display = "block";
         }
 
-        span.onclick = function () {
+        span.addEventListener('click', () => {
             modalWindow.style.display = "none";
-        }
+        })
 
-        window.onclick = function (event) {
+        window.addEventListener('click', () => {
             if (event.target == modalWindow) {
                 modalWindow.style.display = "none";
             }
-        }
+        })
     }
 
     // form
@@ -138,29 +135,49 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     });
 
-    const postData = (url, data) => {
-        const res = fetch(url, {
-            method: "POST",
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: data
-        });
+    // json-server
 
-        return res.json();
+    // const postData = async (url, data) => {
+    //     const res = await fetch(url, {
+    //         method: "POST",
+    //         headers: {
+    //             'Content-type': 'application/json'
+    //         },
+    //         body: data
+    //     });
+
+    //     return await res.json();
+    // }
+
+    // const bindPostData = () => {
+
+    // }
+
+    const div = document.createElement('div');
+    const form__body = document.querySelector('.form__body');
+    const user__data = form__body.querySelector('.form__user-data');
+    const data = () => {
+        fetch('http://localhost:3000/user')
+            .then(res => res.json())
+            .then(res => res.map(res => {
+                div.innerHTML = `
+                <div class="form__user-name">${res.name}</div>
+                <div class="form__rating">${res.rating}<span></span></div>
+                <div class="form__user-text">${res.review}</div>
+                `
+            }))
+        user__data.appendChild(div)
     }
+    data()
 
-    const bindPostData = () => {
 
-    }
     // function call
     modalPoPup(btn, modal);
     modalPoPup(btnCoupon, modalCoupon);
     slider(3, 1, container, track, btnNext, btnPrev, items);
-    slider(3, 1, container2, track2, btnNext2, btnPrev2, items2);
+    slider(4, 1, container2, track2, btnNext2, btnPrev2, items2);
     select();
     menuDown(menuItem, downList);
 
 
 });
-
